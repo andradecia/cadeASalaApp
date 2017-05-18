@@ -1,0 +1,14 @@
+<ion-header   >
+  <ion-navbar color="primary">
+    <ion-title text-center>Cadê a Sala?</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Selecione o Curso...</h2>
+ <ion-list>
+  <button ion-item *ngFor="let curso of cursos" (click)="itemSelected(item)">
+    {{ curso }}
+  </button>  
+</ion-list>
+</ion-content>

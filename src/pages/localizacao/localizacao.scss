@@ -1,0 +1,19 @@
+page-localizacao {
+ .scroll {
+        height: 100%
+      }
+ 
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+ .toolbar-title {
+  overflow: visible;
+  position: relative;
+  .subtitle {
+    position: absolute;
+    top: 8px;
+    font-size: 66%;
+  }
+}
+}
