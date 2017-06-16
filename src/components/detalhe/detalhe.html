@@ -8,7 +8,7 @@
 <ion-card>
 
   <ion-card-content style="background-color:#65A1D5">
-   <h1> Gestão Ambiental </h1>
+   <h1>{{disciplina.disciplina}}</h1>
   </ion-card-content>
 
 </ion-card>
@@ -21,16 +21,14 @@
       <ion-row>
         <ion-col col-md-1>
           <div class="date">
-            <span class="day" style="display: block;font-size: 20px;font-weight: bold;">25</span>
-            <span class="month" style="font-size: 15px;font-weight: bold; ">JUL</span>
+            <span class="month" style="font-size: 15px;font-weight: bold; ">{{ disciplina.datahora }}  </span>
           </div>
         </ion-col>
          <ion-col col-md-1>
            <div style="font-size: 18px;font-weight: bold;padding:10px 0;">AP3</div>
          </ion-col>
          <ion-col col-md-10 >
-            <p class="ng-binding" style="font-weight: bold;">Local: Paulo Freire - 5º  ANDAR - SALA 2</p>
-            <p class="ng-binding" style="font-weight: bold;">Hora: 09:30</p>
+            <p class="ng-binding" style="font-weight: bold;">Local: {{disciplina.local}}</p>
          </ion-col>
       </ion-row>
     </ion-grid>

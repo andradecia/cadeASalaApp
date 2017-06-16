@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Disciplina} from '../../model/disciplina'
+import { NavController, NavParams } from 'ionic-angular';
+import {DisciplinaService} from '../../providers/disciplina.service';
 
 /**
  * Generated class for the Detalhe component.
@@ -12,11 +15,18 @@ import { Component } from '@angular/core';
 })
 export class Detalhe {
 
-  text: string;
-
-  constructor() {
-    console.log('Hello Detalhe Component');
-    this.text = 'Hello World';
+ text: string;
+ disciplina
+  constructor(public navCtrl: NavController,
+    public disciplinaService:DisciplinaService,
+    public navParams:NavParams) { 
+    
+   
+  
   }
+   ngOnInit() {
+        this.disciplina = this.navParams.get('disciplina');
+        console.log(this.disciplina.disciplina)
+   }
 
 }

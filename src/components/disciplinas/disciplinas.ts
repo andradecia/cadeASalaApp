@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Detalhe } from '../detalhe/detalhe'
+import { NavController, NavParams } from 'ionic-angular';
+import { Detalhe } from '../detalhe/detalhe';
+import {DisciplinaService} from '../../providers/disciplina.service';
 
 /**
  * Generated class for the Disciplinas component.
@@ -15,15 +16,27 @@ import { Detalhe } from '../detalhe/detalhe'
 export class Disciplinas {
 
   text: string;
-  disciplinas= [
-    'Biogeografia',
-    'Cartografia Básica'
-  ]
-  constructor(public navCtrl: NavController) {
+  disciplinas;
+   
+  
+  constructor(public navCtrl: NavController,
+  public disciplinaService:DisciplinaService,
+  public navParams:NavParams) {
    
   }
-  itemSelected(curso: string) {
-    this.navCtrl.push(Detalhe);
+  ngOnInit() {
+    var curso = this.navParams.get('curso');
+     this.disciplinaService.getConfiguration(curso).subscribe((data) =>{
+       this.disciplinas = data;
+      
+     });
+     console.log(this.disciplinas)
+    
+  }
+  itemSelected(disciplina) {
+    this.navCtrl.push(Detalhe,{
+        disciplina: disciplina
+    });
   }
 
 }
