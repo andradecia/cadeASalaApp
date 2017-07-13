@@ -5,9 +5,11 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>
+
   <h2>Selecione a Disciplina...</h2>
  <ion-list>
-  <button ion-item *ngFor="let disciplina of disciplinas" (click)="itemSelected(disciplina)">
+  <button ion-item *ngFor="let disciplina of items" (click)="itemSelected(disciplina)">
     {{ disciplina.disciplina }}
   </button>  
 </ion-list>

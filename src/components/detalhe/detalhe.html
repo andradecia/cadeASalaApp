@@ -5,39 +5,113 @@
 </ion-header>
 
 <ion-content padding>
-<ion-card>
+<ion-refresher (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content refreshingText="Buscando atualização...">
+      </ion-refresher-content>
+</ion-refresher>
+ <h6>Atualizado em: {{disciplina.updateDate}}</h6>
+  <ion-card>
 
-  <ion-card-content style="background-color:#65A1D5">
-   <h1>{{disciplina.disciplina}}</h1>
-  </ion-card-content>
+    <ion-card-content style="background-color:#65A1D5">
+    <h1>{{disciplina.disciplina}}</h1>
+    </ion-card-content>
 
-</ion-card>
+  </ion-card>
 
 
-<ion-card>
+  <ion-card>
 
-  <ion-card-content>
-    <ion-grid>
-      <ion-row>
-        <ion-col col-md-1>
-          <div class="date">
-            <span class="month" style="font-size: 15px;font-weight: bold; ">{{ disciplina.datahora }}  </span>
-          </div>
-        </ion-col>
-         <ion-col col-md-1>
-           <div style="font-size: 18px;font-weight: bold;padding:10px 0;">AP3</div>
-         </ion-col>
-         <ion-col col-md-10 >
-            <p class="ng-binding" style="font-weight: bold;">Local: {{disciplina.local}}</p>
-         </ion-col>
-      </ion-row>
-    </ion-grid>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-md-1>
+            <div class="date">
+              <span class="month" style="font-size: 15px;font-weight: bold; ">{{ disciplina.datahora }}  </span>
+            </div>
+          </ion-col>
+          <ion-col col-md-1>
+            <div style="font-size: 18px;font-weight: bold;padding:10px 0;">AP3</div>
+          </ion-col>
+          <ion-col col-md-10 >
+              <p class="ng-binding" style="font-weight: bold;">Local: {{disciplina.local}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-card-content>
+
+ 
+
+
     
-  </ion-card-content>
+  </ion-card>
+  <ion-card>
 
+    <ion-card-content style="">
+    
+    <ion-grid>
+ <ion-row>
+            <ion-col col-md-1>
+             Deadline AD1:
+            </ion-col>
+            <ion-col col-md-1>
+             
+             {{tutor}}
+            </ion-col>
 
+        </ion-row>
+         <ion-row>
+            <ion-col col-md-1>
+              Deadline AD2:  
+            </ion-col>
+            <ion-col col-md-1>
+             
+             {{tutor}}
+            </ion-col>
 
-  
-</ion-card>
+        </ion-row>
+
+        <ion-row>
+            <ion-col col-md-1>
+              Tutor Presencial: 
+            </ion-col>
+            <ion-col col-md-1>
+             
+             {{tutor}}
+            </ion-col>
+
+        </ion-row>
+          <ion-row>
+            <ion-col col-md-1>
+              Sala da Tutoria: 
+            </ion-col>
+            <ion-col col-md-1>
+              Leonardo Gloria
+            </ion-col>
+
+        </ion-row>
+          <ion-row>
+            <ion-col col-md-1>
+              Hora da Tutoria: 
+            </ion-col>
+            <ion-col col-md-1>
+              14:00
+            </ion-col>
+
+        </ion-row>
+        <ion-row>
+            <ion-col col-md-1>
+              Dia da Tutoria: 
+            </ion-col>
+            <ion-col col-md-1>
+              Quarta-Feira
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+    </ion-card-content>
+
+  </ion-card>
+
 </ion-content>
 

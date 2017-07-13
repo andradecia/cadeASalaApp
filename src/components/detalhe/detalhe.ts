@@ -16,17 +16,29 @@ import {DisciplinaService} from '../../providers/disciplina.service';
 export class Detalhe {
 
  text: string;
+ tutor:string;
  disciplina
   constructor(public navCtrl: NavController,
     public disciplinaService:DisciplinaService,
     public navParams:NavParams) { 
+      this.tutor = "Leonardo"
     
    
   
   }
    ngOnInit() {
         this.disciplina = this.navParams.get('disciplina');
-        console.log(this.disciplina.disciplina)
+       
    }
 
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      this.tutor = "Elberth"
+      refresher.complete();
+    }, 2000);
+  }
+    
 }
