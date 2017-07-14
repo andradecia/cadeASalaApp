@@ -7,10 +7,16 @@
 <ion-content padding>
     <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>
 
+<ion-refresher (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content refreshingText="Buscando atualização...">
+      </ion-refresher-content>
+</ion-refresher>
+
+
   <h2>Selecione a Disciplina...</h2>
  <ion-list>
   <button ion-item *ngFor="let disciplina of items" (click)="itemSelected(disciplina)">
-    {{ disciplina.disciplina }}
+    {{ disciplina.discipline_name }}
   </button>  
 </ion-list>
 </ion-content>

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http'; 
+import { IonicStorageModule } from '@ionic/storage';
 
 import {AwsUtil} from '../providers/aws.service';
 import {DisciplinaService} from '../providers/disciplina.service';
@@ -15,6 +16,7 @@ import {Disciplinas} from '../components/disciplinas/disciplinas'
 import {Detalhe} from '../components/detalhe/detalhe'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CoursesService } from '../providers/courses/courses.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,7 +51,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AwsUtil,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CoursesService
   ]
 })
 export class AppModule {}

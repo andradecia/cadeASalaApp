@@ -10,7 +10,7 @@
   <h2>Selecione o Curso...</h2>
  <ion-list>
   <button ion-item *ngFor="let curso of cursos" (click)="itemSelected(curso)">
-    {{ curso }}
+    {{ curso.name }}
   </button>  
 </ion-list>
 </ion-content>
