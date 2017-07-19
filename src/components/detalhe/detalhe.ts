@@ -16,12 +16,10 @@ import {DisciplinaService} from '../../providers/disciplina.service';
 export class Detalhe {
 
  text: string;
- tutor:string;
  disciplina
   constructor(public navCtrl: NavController,
     public disciplinaService:DisciplinaService,
     public navParams:NavParams) { 
-      this.tutor = "Leonardo"
     
    
   
@@ -36,7 +34,6 @@ export class Detalhe {
     
     setTimeout(() => {
       console.log('Async operation has ended');
-      this.tutor = "Elberth"
       refresher.complete();
     }, 2000);
   }

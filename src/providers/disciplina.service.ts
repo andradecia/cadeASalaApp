@@ -12,7 +12,10 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class DisciplinaService{
     disciplinas;
-    url:string = 'http://54.208.105.99/api/v1/locations/1/courses/'
+    //url:string = 'http://54.208.105.99/api/v1/locations/1/courses/'
+    url:string = "https://ab9la9wbm9.execute-api.us-east-1.amazonaws.com/v1/locations/1/courses/"
+
+
     urlSufix:string = '/course_disciplines'
     constructor(public http:Http){
 
@@ -23,7 +26,11 @@ export class DisciplinaService{
    
    return this.http.get(urlFinal)
     .toPromise()
-    .then(response => response.json().course_disciplines as Disciplina[] )
+    .then(response => response.json().Items.sort((a,b) =>{
+      if(a.discipline_name < b.discipline_name) return -1;
+      if(a.discipline_name > b.discipline_name) return 1;
+    return 0;
+    })  )
     
   }
 

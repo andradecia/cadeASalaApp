@@ -17,6 +17,7 @@ import {Detalhe} from '../components/detalhe/detalhe'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CoursesService } from '../providers/courses/courses.service';
+import { DatesPipe } from '../pipes/dates/dates';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CoursesService } from '../providers/courses/courses.service';
     TabsPage,
     LocalizacaoPage,
     Disciplinas,
-    Detalhe
+    Detalhe,
+    DatesPipe
   ],
   imports: [
     BrowserModule,

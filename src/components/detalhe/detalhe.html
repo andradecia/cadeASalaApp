@@ -9,7 +9,7 @@
   <ion-refresher-content refreshingText="Buscando atualização...">
       </ion-refresher-content>
 </ion-refresher>
- <h6>Atualizado em: {{disciplina.updateDate}}</h6>
+ <h6>Atualizado em: {{disciplina.updated | date: 'dd/MM/yyyy HH:mm' }}</h6>
   <ion-card>
 
     <ion-card-content style="background-color:#65A1D5">
@@ -19,32 +19,78 @@
   </ion-card>
 
 
-  <ion-card>
+  <ion-card *ngIf="disciplina.ap1">
 
     <ion-card-content>
       <ion-grid>
         <ion-row>
           <ion-col col-md-1>
             <div class="date">
-              <span class="month" style="font-size: 15px;font-weight: bold; ">{{ disciplina.ap3_date | date: 'dd/MM/yyyy HH:mm' }}  </span>
+              <span class="month" style="font-size: 15px;font-weight: bold; ">{{ disciplina.ap1.date}} <br />  {{disciplina.ap1.time }}  </span>
             </div>
           </ion-col>
           <ion-col col-md-1>
-            <div style="font-size: 18px;font-weight: bold;padding:10px 0;">AP3</div>
+            <div style="font-size: 18px;font-weight: bold;padding:10px 0;">AP1</div>
           </ion-col>
           <ion-col col-md-10 >
-              <p class="ng-binding" style="font-weight: bold;">Local: {{disciplina.ap3_local}}</p>
+              <p class="ng-binding" style="font-weight: bold;">Local: {{disciplina.ap1.local}}</p>
           </ion-col>
         </ion-row>
       </ion-grid>
       
     </ion-card-content>
 
- 
-
-
-    
   </ion-card>
+
+<ion-card *ngIf="disciplina.ap2">
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-md-1>
+            <div class="date">
+              <span class="month" style="font-size: 15px;font-weight: bold; ">{{ disciplina.ap2.date }} <br /> {{disciplina.ap2.time }}  </span>
+            </div>
+          </ion-col>
+          <ion-col col-md-1>
+            <div style="font-size: 18px;font-weight: bold;padding:10px 0;">AP2</div>
+          </ion-col>
+          <ion-col col-md-10 >
+              <p class="ng-binding" style="font-weight: bold;">Local: {{disciplina.ap2.local}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-card-content>
+
+  </ion-card>
+  <ion-card *ngIf="disciplina.ap3">
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-md-1>
+            <div class="date">
+              <span class="month" style="font-size: 15px;font-weight: bold; ">{{ disciplina.ap3.date}} <br /> {{disciplina.ap3.time}}   </span>
+            </div>
+          </ion-col>
+          <ion-col col-md-1>
+            <div style="font-size: 18px;font-weight: bold;padding:10px 0;">AP3</div>
+          </ion-col>
+          <ion-col col-md-10 >
+              <p class="ng-binding" style="font-weight: bold;">Local: {{disciplina.ap3.local}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-card-content>
+
+  </ion-card>
+
+
+
+
+
   <ion-card>
 
     <ion-card-content style="">
@@ -52,21 +98,21 @@
     <ion-grid>
  <ion-row>
             <ion-col col-md-1>
-             Deadline AD1:
+             AD1:
             </ion-col>
             <ion-col col-md-1>
              
-             {{disciplina.ad1_deadline}}
+           {{disciplina.ad1_deadline}}
             </ion-col>
 
         </ion-row>
          <ion-row>
             <ion-col col-md-1>
-              Deadline AD2:  
+              AD2:  
             </ion-col>
-            <ion-col col-md-1>
+            <ion-col col-md-1 >
              
-             {{disciplina.ad2_deadline}}
+             {{disciplina.ad2_deadline }} 
             </ion-col>
 
         </ion-row>
