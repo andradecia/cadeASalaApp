@@ -6,6 +6,7 @@ import {CoursesService} from '../../providers/courses/courses.service'
 import {Course} from '../../model/course'
 import { Storage } from '@ionic/storage';
 
+import {AwsUtil} from '../../providers/aws.service'
 
 @Component({
   selector: 'page-home',
@@ -16,7 +17,10 @@ export class HomePage implements OnInit {
   cursos:Course[];
   constructor(public navCtrl: NavController,
               private coursesService: CoursesService,
-              private storage : Storage) {
+              private storage : Storage,
+              public awsUtil : AwsUtil) {
+
+
 
   }
   ngOnInit() {

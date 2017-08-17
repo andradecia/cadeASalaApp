@@ -10,7 +10,7 @@ export class AwsUtil{
       var options = {
           appId: _MOBILE_ANALYTICS_APP_ID,
       };
-    var mobileAnalyticsClient = new AMA.Manager(options);
-    mobileAnalyticsClient.submitEvents();
+        var mobileAnalyticsClient = new AMA.Manager(options);
+        mobileAnalyticsClient.submitEvents();
     }
 }
